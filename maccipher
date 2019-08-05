@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ciphr="å∫ç∂´ƒ©˙ˆ∆˚¬µ˜øπœ®ß†¨√∑≈¥ΩÅıÇÎ´Ï˝ÓˆÔÒÂ˜Ø∏Œ‰Íˇ¨◊„˛Á¸¡™£¢∞§¶•ªº–≠⁄€‹›ﬁﬂ‡°·‚—±“‘«…æ≤≥÷”’»ÚÆ¯˘¿"
+plain="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=!@#$%^&*()_+[]\\;',./{}|:\"<>?"
+
+case $1 in
+    -e)
+	echo $2 | tr $plain $ciphr
+	;;
+    -d)
+	echo $2 | tr $ciphr $plain
+	;;
+    *) 
+	echo "Use command line flag -e to encrypt or -d to decrypt"
+esac
+
